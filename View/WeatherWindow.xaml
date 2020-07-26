@@ -44,7 +44,7 @@
         </ListView>
         <TextBlock x:Name="txtCity" Text="{Binding accuWeatherLocation.LocalizedName}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" 
                    FontSize="30" FontWeight="Bold" VerticalAlignment="Center" />
-        <TextBlock x:Name="txtCurrentTemp" Text="{Binding accuWeatherCurrent.Temperature}" VerticalAlignment="Center" 
+        <TextBlock x:Name="txtCurrentTemp" Text="{Binding accuWeatherCurrent.Temperature.Metric.Value}" VerticalAlignment="Center" 
                    Grid.Column="0" Grid.Row="2" FontSize="30" FontWeight="Bold"/>
         <TextBlock x:Name="txtCurrentText" VerticalAlignment="Center" TextWrapping="WrapWithOverflow" 
                    Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4" FontSize="20" FontWeight="Bold"
@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="lblTempMinDay1" Content="{Binding accuWeather5Day.DailyForecasts[0].Temperature.Minimum}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
-            <Label x:Name="lblTempMaxDay1" Content="{Binding accuWeather5Day.DailyForecasts[0].Temperature.Maximum}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMinDay1" Content="{Binding accuWeather5Day.DailyForecasts[0].Temperature.Minimum.Value}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMaxDay1" Content="{Binding accuWeather5Day.DailyForecasts[0].Temperature.Maximum.Value}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
         <Label x:Name="lblDay2" Content="{Binding accuWeather5Day.DailyForecasts[1].Date}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" FontSize="18"/>
@@ -82,8 +82,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="lblTempMinDay2" Content="{Binding accuWeather5Day.DailyForecasts[1].Temperature.Minimum}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
-            <Label x:Name="lblTempMaxDay2" Content="{Binding accuWeather5Day.DailyForecasts[1].Temperature.Maximum}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMinDay2" Content="{Binding accuWeather5Day.DailyForecasts[1].Temperature.Minimum.Value}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMaxDay2" Content="{Binding accuWeather5Day.DailyForecasts[1].Temperature.Maximum.Value}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
         <Label x:Name="lblDay3" Content="{Binding accuWeather5Day.DailyForecasts[2].Date}" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" FontSize="18"/>
@@ -100,8 +100,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="lblTempMinDay3" Content="{Binding accuWeather5Day.DailyForecasts[2].Temperature.Minimum}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
-            <Label x:Name="lblTempMaxDay3" Content="{Binding accuWeather5Day.DailyForecasts[2].Temperature.Maximum}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMinDay3" Content="{Binding accuWeather5Day.DailyForecasts[2].Temperature.Minimum.Value}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMaxDay3" Content="{Binding accuWeather5Day.DailyForecasts[2].Temperature.Maximum.Value}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
         <Label x:Name="lblDay4" Content="{Binding accuWeather5Day.DailyForecasts[3].Date}" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" FontSize="18"/>
@@ -118,8 +118,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="lblTempMinDay4" Content="{Binding accuWeather5Day.DailyForecasts[3].Temperature.Minimum}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
-            <Label x:Name="lblTempMaxDay4" Content="{Binding accuWeather5Day.DailyForecasts[3].Temperature.Maximum}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMinDay4" Content="{Binding accuWeather5Day.DailyForecasts[3].Temperature.Minimum.Value}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMaxDay4" Content="{Binding accuWeather5Day.DailyForecasts[3].Temperature.Maximum.Value}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
         <Label x:Name="lblDay5" Content="{Binding accuWeather5Day.DailyForecasts[4].Date}" Grid.Row="3" Grid.Column="4" VerticalAlignment="Bottom" FontSize="18"/>
@@ -136,8 +136,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Label x:Name="lblTempMinDay5" Content="{Binding accuWeather5Day.DailyForecasts[4].Temperature.Minimum}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
-            <Label x:Name="lblTempMaxDay5" Content="{Binding accuWeather5Day.DailyForecasts[4].Temperature.Maximum}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMinDay5" Content="{Binding accuWeather5Day.DailyForecasts[4].Temperature.Minimum.Value}" Grid.Column="0" VerticalAlignment="Center" FontSize="15"/>
+            <Label x:Name="lblTempMaxDay5" Content="{Binding accuWeather5Day.DailyForecasts[4].Temperature.Maximum.Value}" Grid.Column="1" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
 
     </Grid>

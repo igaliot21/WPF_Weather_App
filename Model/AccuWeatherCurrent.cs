@@ -12,22 +12,26 @@ namespace WPFWeathreApp.Model
     {
         private DateTime localobservationdatetime;
         private string weathertext;
-        private TemperatureCurrent temperature;
-        public DateTime LocalObservationDateTime {
+        private Temperature temperature;
+
+        public DateTime LocalObservationDateTime
+        {
             get { return this.localobservationdatetime; }
             set {
                 this.localobservationdatetime = value;
                 OnPropertyChange("LocalObservationDateTime");
             } 
         }
-        public string WeatherText {
+        public string WeatherText
+        {
             get { return this.weathertext; }
             set {
                 this.weathertext = value;
                 OnPropertyChange("WeatherText");
             } 
         }
-        public TemperatureCurrent Temperature {
+        public Temperature Temperature
+        {
             get { return this.temperature; }
             set {
                 this.temperature = value;
@@ -42,7 +46,7 @@ namespace WPFWeathreApp.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    public class TemperatureCurrent : INotifyPropertyChanged
+    public class Temperature : INotifyPropertyChanged
     {
         private Metric metric;
         public Metric Metric {

@@ -48,6 +48,7 @@ namespace WPFWeathreApp.ViewModel
         }
         private async void GetWeather()
         {
+            //this.accuweatherlocation.Key = "307297";
             var varAccuWeatherCurrent = await AccuWeatherViewModel.GetAccuWeatherCurrentInfoAsync(this.accuweatherlocation.Key);
             this.accuWeatherCurrent.LocalObservationDateTime = varAccuWeatherCurrent.LocalObservationDateTime;
             this.accuWeatherCurrent.Temperature = varAccuWeatherCurrent.Temperature;

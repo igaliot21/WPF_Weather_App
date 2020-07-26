@@ -27,7 +27,7 @@ namespace WPFWeathreApp.ViewModel
                 if (resultado.IsSuccessStatusCode)
                 {
                     string content = await resultado.Content.ReadAsStringAsync();
-                    result = JsonConvert.DeserializeObject<AccuWeatherCurrent>(content);
+                    result = JsonConvert.DeserializeObject<List<AccuWeatherCurrent>>(content).FirstOrDefault();
                 }
             }
             return result;

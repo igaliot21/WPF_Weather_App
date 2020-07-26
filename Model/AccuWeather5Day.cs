@@ -24,7 +24,7 @@ namespace WPFWeathreApp.Model
     }
     public class DailyForecast : INotifyPropertyChanged{
         private DateTime date;
-        private Temperature temperature;
+        private Temperature5Day temperature;
         public DateTime Date {
             get { return this.date; }
             set {
@@ -32,7 +32,7 @@ namespace WPFWeathreApp.Model
                 OnPropertyChange("Date");
             }
         }
-        public Temperature Temperature {
+        public Temperature5Day Temperature {
             get { return this.temperature; }
             set {
                 this.temperature = value;
@@ -45,7 +45,7 @@ namespace WPFWeathreApp.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-    public class Temperature : INotifyPropertyChanged{
+    public class Temperature5Day : INotifyPropertyChanged{
         private Minimum minimum;
         private Maximum maximum;
         public Minimum Minimum {
