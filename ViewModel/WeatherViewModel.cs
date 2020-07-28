@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.TextFormatting;
 using WPFWeathreApp.Model;
 using WPFWeathreApp.ViewModel;
+using WPFWeathreApp.ViewModel.Commands;
 
 namespace WPFWeathreApp.ViewModel
 {
@@ -32,12 +33,14 @@ namespace WPFWeathreApp.ViewModel
             } 
         }
         public ObservableCollection<AccuWeatherLocation> Cities { get; set; }
+        public RefreshCommand RefreshCommand { get; set; }
         public WeatherViewModel()
         {
             accuWeatherCurrent = new AccuWeatherCurrent();
             accuWeather5Day = new AccuWeather5Day();
             accuWeatherLocation = new AccuWeatherLocation();
             Cities = new ObservableCollection<AccuWeatherLocation>();
+            RefreshCommand = new RefreshCommand(this);
         }
         private async void GetCities(){
             var items = await AccuWeatherViewModel.GetAccuWeatherLocationInfoAsync(this.query);
@@ -46,16 +49,18 @@ namespace WPFWeathreApp.ViewModel
                 Cities.Add(item);
             }
         }
-        private async void GetWeather()
+        public async void GetWeather()
         {
             //this.accuweatherlocation.Key = "307297";
-            var varAccuWeatherCurrent = await AccuWeatherViewModel.GetAccuWeatherCurrentInfoAsync(this.accuweatherlocation.Key);
-            this.accuWeatherCurrent.LocalObservationDateTime = varAccuWeatherCurrent.LocalObservationDateTime;
-            this.accuWeatherCurrent.Temperature = varAccuWeatherCurrent.Temperature;
-            this.accuWeatherCurrent.WeatherText = varAccuWeatherCurrent.WeatherText;
-            
-            var varAccuWeather5Day = await AccuWeatherViewModel.GetAccuWeather5DayInfoAsync(this.accuweatherlocation.Key);
-            this.accuWeather5Day.DailyForecasts = varAccuWeather5Day.DailyForecasts;
+            if (!string.IsNullOrEmpty(this.accuweatherlocation.Key)){
+                var varAccuWeatherCurrent = await AccuWeatherViewModel.GetAccuWeatherCurrentInfoAsync(this.accuweatherlocation.Key);
+                this.accuWeatherCurrent.LocalObservationDateTime = varAccuWeatherCurrent.LocalObservationDateTime;
+                this.accuWeatherCurrent.Temperature = varAccuWeatherCurrent.Temperature;
+                this.accuWeatherCurrent.WeatherText = varAccuWeatherCurrent.WeatherText;
+
+                var varAccuWeather5Day = await AccuWeatherViewModel.GetAccuWeather5DayInfoAsync(this.accuweatherlocation.Key);
+                this.accuWeather5Day.DailyForecasts = varAccuWeather5Day.DailyForecasts;
+            }
         }
     }
 }

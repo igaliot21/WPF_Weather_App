@@ -64,6 +64,8 @@
     <Compile Include="Model\AccuWeatherCurrent.cs" />
     <Compile Include="Model\AccuWeatherLocation.cs" />
     <Compile Include="ViewModel\AccuWeatherViewModel.cs" />
+    <Compile Include="ViewModel\Commands\RefreshCommand.cs" />
+    <Compile Include="ViewModel\Converters\TempToStringConverter.cs" />
     <Compile Include="ViewModel\WeatherViewModel.cs" />
     <Compile Include="View\WeatherWindow.xaml.cs">
       <DependentUpon>WeatherWindow.xaml</DependentUpon>
