@@ -19,9 +19,7 @@ namespace WPFWeathreApp.ViewModel.Commands
         public bool CanExecute(object parameter)
         {
             if (parameter != null) {
-                var WeatherCurrent = parameter as AccuWeatherCurrent;
-                if (WeatherCurrent.Temperature.Metric.Value != 10) return false;
-                else return true;
+                return true;
             }
             return false;
         }

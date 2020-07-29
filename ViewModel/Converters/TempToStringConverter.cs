@@ -12,11 +12,11 @@ namespace WPFWeathreApp.ViewModel.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string tempString = "It's OK";
             double actualTemp = (double)value;
+            string tempString = $"It's OK ({actualTemp.ToString()})";
 
-            if (actualTemp > 25) tempString = "Hot!";
-            else if (actualTemp < 15) tempString = "Cold!";
+            if (actualTemp > 25) tempString = $"Hot! ({actualTemp.ToString()})";
+            else if (actualTemp < 15) tempString = $"Cold! ({actualTemp.ToString()})";
 
             return tempString;
         }
